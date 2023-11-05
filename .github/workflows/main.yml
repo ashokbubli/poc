@@ -6,7 +6,7 @@ on:
 jobs:
   metadata:
     runs-on: ubuntu-latest
- 
+    
     steps:
 
 
@@ -31,6 +31,9 @@ jobs:
         git add repository_metadata.json
         git commit -m "Add output file"
         git push
+
+      env: 
+         repo-token: ${{ secrets.GITHUB_TOKEN }}
 
 
 
