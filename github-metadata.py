@@ -7,9 +7,9 @@ import os
 # GitHub API base URL
 BASE_URL = "https://api.github.com"
 
-# Your GitHub username and personal access token os.environ.get("PAT")
+# Your GitHub username and personal access token 
 USERNAME = "ashokbubli"
-TOKEN = "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"
+TOKEN = os.environ.get("PAT")
 
 
 # Function to get the list of all repositories for your GitHub account (including private repositories)
