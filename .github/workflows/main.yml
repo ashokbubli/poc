@@ -1,0 +1,36 @@
+name: report
+
+on:
+  workflow_dispatch:
+
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+ 
+    steps:
+
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.x
+
+    - name: Install dependencies
+      run: |
+        pip install requests requests
+        pip install requests pyyaml
+        
+    - name: Run Python script and save output
+      run: |
+        python py-script.py > repository_metadata.csv
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git add repository_metadata.csv
+        git commit -m "Add output file"
+        git push
+
+      env: 
+         GITHUB_TOKEN: ${{ secrets.PAT }}
