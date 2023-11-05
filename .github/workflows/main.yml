@@ -33,6 +33,4 @@ jobs:
         git push
 
 
-      env: 
-         GITHUB_USERNAME: ashokbubli
-         GITHUB_TOKEN: ${{ secrets.PAT }}
+
