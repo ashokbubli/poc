@@ -6,7 +6,8 @@ on:
 jobs:
   metadata:
     runs-on: ubuntu-latest
-    
+    env: 
+      GITHUB_TOKEN: ${{ secrets.PAT }}    
     steps:
 
 
