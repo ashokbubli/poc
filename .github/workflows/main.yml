@@ -7,10 +7,16 @@ jobs:
   metadata:
     runs-on: ubuntu-latest
     env: 
-      GITHUB_TOKEN: ${{ secrets.PAT }}    
+      GITHUB_TOKEN: ${{ secrets.PAT }}  
+      
+
     steps:
 
-
+    - uses: actions/upload-artifact@v3
+      with:
+          name: repos
+          path: repository_metadata.json
+       
     - name: Checkout repository
       uses: actions/checkout@v2
 
