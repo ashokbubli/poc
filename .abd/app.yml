@@ -1,0 +1,10 @@
+application: 
+contacts:
+it-owner: owner
+key-expert:
+- user1
+- user2
+hosted-env: cloud
+accessibility: 
+servicenow:
+business-service-name: gh support
